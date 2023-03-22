@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Circle Effect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style media="screen">
+      *{margin: 0; padding: 0; box-sizing: border-box;}
+
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 97vh;
+        background: rgb(39, 49, 55);
+      }
+
+      .wrap{
+        display: flex;
+        gap: 40px;
+        color: #fff;
+      }
+
+      .wrap .circle{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .wrap .circle svg{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        transform: rotate(270deg);
+      }
+
+      .wrap .circle svg circle{
+        width: 100%;
+        height: 100%;
+        fill: transparent;
+        stroke: #0e1b1d;
+        stroke-width: 4;
+        transform: translate(5px,5px);
+      }
+
+      .wrap .circle svg circle:nth-child(2){
+        stroke: var(--color);
+        stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+        transition: 0.45s ease;
+      }
+      .wrap .circle:hover svg circle:nth-child(2){stroke-dashoffset: 0;}
+      .wrap .circle:hover i{color:var(--color);}
+
+      .wrap .circle i{
+        position: absolute;
+        font-size: 52px;
+        color: #e7ddc6;
+        transition: 0.24s;
+      }
+
+
+      @media (max-width:550px){
+        .wrap{flex-direction: column;}
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="wrap">
+      <div class="circle" style="--color:#2dbacd;">
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <i class="fa-solid fa-gamepad"></i>
+      </div>
+
+
+      <div class="circle" style="--color:#f05353;">
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+      </div>
+
+
+      <div class="circle" style="--color:#994ce6;">
+        <svg>
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <i class="fa-solid fa-chess"></i>
+      </div>
+    </div>
+
+  </body>
+</html>
